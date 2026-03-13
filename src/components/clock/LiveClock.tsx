@@ -1,5 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-export default function LiveClock() {
-  return <span>00:00:00</span>;
+interface LiveClockProps {
+  variant?: 'welcome' | 'default'
+}
+
+export default function LiveClock({ variant = 'default' }: LiveClockProps) {
+  return <span>00:00:00</span>
 }
