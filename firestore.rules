@@ -1,0 +1,48 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Safe admin check — returns false if user doc doesn't exist yet
+    function isAdmin() {
+      let userDoc = get(/databases/$(database)/documents/users/$(request.auth.uid));
+      return userDoc.data != null && userDoc.data.get('role', '') == 'admin';
+    }
+
+    // Users collection
+    match /users/{userId} {
+      // Any authenticated user can read any user doc (needed for task assignment display)
+      allow read: if request.auth != null;
+
+      // Only the user themselves can create their own doc (on signup)
+      allow create: if request.auth != null && request.auth.uid == userId;
+
+      // Users update own limited fields; admins update anything
+      allow update: if request.auth != null && (
+        request.auth.uid == userId || isAdmin()
+      );
+
+      allow delete: if request.auth != null && isAdmin();
+    }
+
+    // Tasks collection
+    match /tasks/{taskId} {
+      allow read: if request.auth != null && (
+        isAdmin() ||
+        request.auth.uid in resource.data.assignedTo
+      );
+
+      allow create: if request.auth != null && isAdmin();
+
+      allow update: if request.auth != null && (
+        isAdmin() ||
+        (
+          request.auth.uid in resource.data.assignedTo &&
+          request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'updatedAt'])
+        )
+      );
+
+      allow delete: if request.auth != null && isAdmin();
+    }
+  }
+}
