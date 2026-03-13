@@ -1,3 +1,127 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --flux-red: #E63946;
+    --flux-red-dark: #C1121F;
+    --flux-red-light: #FF6B6B;
+    --flux-black: #FFFFFF;
+    --flux-black-soft: #F8F9FA;
+    --flux-black-card: #FFFFFF;
+    --flux-black-border: #E9ECEF;
+    --flux-text: #1A1A1A;
+    --flux-text-muted: #6C757D;
+    --flux-text-dim: #ADB5BD;
+    --flux-gray: #495057;
+}
+
+.dark {
+    --flux-black: #000000;
+    --flux-black-soft: #121212;
+    --flux-black-card: #1E1E1E;
+    --flux-black-border: #333333;
+    --flux-text: #FFFFFF;
+    --flux-text-muted: #A0A0A0;
+    --flux-text-dim: #666666;
+    --flux-gray: #BDBDBD;
+}
+
+body {
+    @apply bg-flux-black-soft text-flux-white font-sans antialiased;
+}
+
+.glow-red {
+    box-shadow: 0 0 20px rgba(230, 57, 70, 0.4);
+}
+
+.bg-radial-vignette {
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.glass-morphism {
+    @apply backdrop-blur-xl bg-white/[0.03] border border-white/10 shadow-2xl;
+}
+
+.flux-card {
+    @apply glass-morphism rounded-2xl transition-all duration-300;
+}
+
+.flux-input {
+    @apply w-full bg-flux-black-soft border border-flux-black-border rounded-xl px-4 py-2.5 text-flux-white text-sm outline-none focus:border-flux-red transition-all cursor-pointer appearance-none;
+}
+
+/* Hide default search icons in Chrome/Safari */
+.flux-input::-webkit-search-decoration,
+.flux-input::-webkit-search-cancel-button,
+.flux-input::-webkit-search-results-button,
+.flux-input::-webkit-search-results-decoration {
+    display: none;
+}
+
+.flux-input option {
+    @apply bg-flux-black-card text-flux-white;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-flux-black-border rounded-full hover:bg-flux-red/30 transition-colors;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+}
+
+/* FullCalendar Highlighting */
+.fc .fc-highlight {
+    background: rgba(230, 57, 70, 0.3) !important;
+}
+
+.fc .fc-day-today {
+    background: rgba(230, 57, 70, 0.05) !important;
+}
+
+.fc-event-flux {
+    border: none !important;
+    box-shadow: 0 0 10px rgba(230, 57, 70, 0.3);
+}
+
+.fc-event-google {
+    @apply border-none;
+}
