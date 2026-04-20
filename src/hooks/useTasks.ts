@@ -13,11 +13,19 @@ import {
   where,
   writeBatch,
 } from 'firebase/firestore'
+<<<<<<< HEAD
 import { db } from '@/lib/firebase'
 import { useTaskStore } from '@/store/taskStore'
 import { useAuthContext } from '@/context/AuthContext'
 import type { Task, TaskFormData, TaskStatus } from '@/types'
 import { createGoogleCalendarEvent, deleteGoogleCalendarEvent } from '@/lib/googleCalendar'
+=======
+import { db } from '../lib/firebase'
+import { useTaskStore } from '../store/taskStore'
+import { useAuthContext } from '../context/AuthContext'
+import type { Task, TaskFormData, TaskStatus } from '../types'
+import { createGoogleCalendarEvent, deleteGoogleCalendarEvent } from '../lib/googleCalendar'
+>>>>>>> 918101e2642bbe8acb58086013a31c2b3259ffcb
 
 export function useTasks() {
   const { fluxUser } = useAuthContext()

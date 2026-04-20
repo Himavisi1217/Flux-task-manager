@@ -1,8 +1,14 @@
 import { useEffect } from 'react'
 import { collection, onSnapshot, query } from 'firebase/firestore'
+<<<<<<< HEAD
 import { db } from '@/lib/firebase'
 import { useTaskStore } from '@/store/taskStore'
 import type { FluxUser } from '@/types'
+=======
+import { db } from '../lib/firebase'
+import { useTaskStore } from '../store/taskStore'
+import type { FluxUser } from '../types'
+>>>>>>> 918101e2642bbe8acb58086013a31c2b3259ffcb
 
 export function useUsers() {
   const { users, setUsers } = useTaskStore()

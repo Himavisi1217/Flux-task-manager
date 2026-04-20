@@ -7,11 +7,19 @@ import interactionPlugin from '@fullcalendar/interaction'
 import { RefreshCw, CalendarDays, Plug, PlugZap } from 'lucide-react'
 import { format } from 'date-fns'
 import { Timestamp } from 'firebase/firestore'
+<<<<<<< HEAD
 import { useTasks } from '@/hooks/useTasks'
 import { useGoogleCalendar } from '@/hooks/useGoogleCalendar'
 import { Button } from '@/components/ui/Button'
 import { PriorityBadge, StatusBadge } from '@/components/ui/Badge'
 import type { CalendarEvent, Task } from '@/types'
+=======
+import { useTasks } from '../hooks/useTasks'
+import { useGoogleCalendar } from '../hooks/useGoogleCalendar'
+import { Button } from '../components/ui/Button'
+import { PriorityBadge, StatusBadge } from '../components/ui/Badge'
+import type { CalendarEvent, Task } from '../types'
+>>>>>>> 918101e2642bbe8acb58086013a31c2b3259ffcb
 
 function taskToCalendarEvent(task: Task): CalendarEvent {
   const dueDate = task.dueDate instanceof Timestamp

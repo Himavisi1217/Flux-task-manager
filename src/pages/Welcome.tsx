@@ -2,9 +2,15 @@ import { useEffect, useRef, Suspense, lazy } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ArrowRight, Zap } from 'lucide-react'
+<<<<<<< HEAD
 import LiveClock from '@/components/clock/LiveClock'
 
 const ThreeBackground = lazy(() => import('@/components/three/ThreeBackground'))
+=======
+import LiveClock from '../components/clock/LiveClock'
+
+const ThreeBackground = lazy(() => import('../components/three/ThreeBackground'))
+>>>>>>> 918101e2642bbe8acb58086013a31c2b3259ffcb
 
 export default function Welcome() {
   const navigate = useNavigate()

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [build]
   command = "npm run build"
   publish = "dist"
@@ -12,3 +13,19 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+=======
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[dev]
+  command = "npm run dev"
+
+[build.environment]
+  NODE_VERSION = "21"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+>>>>>>> 918101e2642bbe8acb58086013a31c2b3259ffcb

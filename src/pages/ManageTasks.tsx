@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { Plus, Trash2, Pencil, Search, AlertTriangle, Shield } from 'lucide-react'
 import { format } from 'date-fns'
+<<<<<<< HEAD
 import { useTasks } from '@/hooks/useTasks'
 import { useUsers } from '@/hooks/useUsers'
 import { Button } from '@/components/ui/Button'
@@ -10,6 +11,16 @@ import Modal from '@/components/ui/Modal'
 import TaskForm from '@/components/tasks/TaskForm'
 import type { Task } from '@/types'
 import { useAuthContext } from '@/context/AuthContext'
+=======
+import { useTasks } from '../hooks/useTasks'
+import { useUsers } from '../hooks/useUsers'
+import { Button } from '../components/ui/Button'
+import { PriorityBadge, StatusBadge } from '../components/ui/Badge'
+import Modal from '../components/ui/Modal'
+import TaskForm from '../components/tasks/TaskForm'
+import type { Task } from '../types'
+import { useAuthContext } from '../context/AuthContext'
+>>>>>>> 918101e2642bbe8acb58086013a31c2b3259ffcb
 
 export default function ManageTasks() {
   const { tasks, deleteTask } = useTasks()

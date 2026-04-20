@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+<<<<<<< HEAD
 import { AuthProvider } from '@/context/AuthContext'
 import { ThemeProvider } from '@/context/ThemeContext'
 import { ProtectedRoute } from './ProtectedRoute'
@@ -10,6 +11,19 @@ import Tasks from '@/pages/Tasks'
 import Calendar from '@/pages/Calendar'
 import ManageTasks from '@/pages/ManageTasks'
 import Profile from '@/pages/Profile'
+=======
+import { AuthProvider } from '../context/AuthContext'
+import { ThemeProvider } from '../context/ThemeContext'
+import { ProtectedRoute } from './ProtectedRoute'
+import AppLayout from '../components/layout/AppLayout'
+import Welcome from '../pages/Welcome'
+import Auth from '../pages/Auth'
+import Dashboard from '../pages/Dashboard'
+import Tasks from '../pages/Tasks'
+import Calendar from '../pages/Calendar'
+import ManageTasks from '../pages/ManageTasks'
+import Profile from '../pages/Profile'
+>>>>>>> 918101e2642bbe8acb58086013a31c2b3259ffcb
 
 export default function AppRouter() {
   return (

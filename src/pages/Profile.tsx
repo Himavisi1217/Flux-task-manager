@@ -15,6 +15,7 @@ import {
   Plug,
   Users,
 } from 'lucide-react'
+<<<<<<< HEAD
 import { db } from '@/lib/firebase'
 import { useAuthContext } from '@/context/AuthContext'
 import { useUsers } from '@/hooks/useUsers'
@@ -22,6 +23,15 @@ import { useGoogleCalendar } from '@/hooks/useGoogleCalendar'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import type { FluxUser } from '@/types'
+=======
+import { db } from '../lib/firebase'
+import { useAuthContext } from '../context/AuthContext'
+import { useUsers } from '../hooks/useUsers'
+import { useGoogleCalendar } from '../hooks/useGoogleCalendar'
+import { Button } from '../components/ui/Button'
+import { Input } from '../components/ui/Input'
+import type { FluxUser } from '../types'
+>>>>>>> 918101e2642bbe8acb58086013a31c2b3259ffcb
 
 const profileSchema = z.object({
   displayName: z.string().min(2, 'Name is required'),

@@ -2,12 +2,21 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { CheckCircle2, Clock, AlertTriangle, ListTodo, TrendingUp } from 'lucide-react'
 import { format } from 'date-fns'
+<<<<<<< HEAD
 import { useAuthContext } from '@/context/AuthContext'
 import { useLiveClock } from '@/hooks/useLiveClock'
 import { useTasks } from '@/hooks/useTasks'
 import { useUsers } from '@/hooks/useUsers'
 import { PriorityBadge, StatusBadge } from '@/components/ui/Badge'
 import type { Task } from '@/types'
+=======
+import { useAuthContext } from '../context/AuthContext'
+import { useLiveClock } from '../hooks/useLiveClock'
+import { useTasks } from '../hooks/useTasks'
+import { useUsers } from '../hooks/useUsers'
+import { PriorityBadge, StatusBadge } from '../components/ui/Badge'
+import type { Task } from '../types'
+>>>>>>> 918101e2642bbe8acb58086013a31c2b3259ffcb
 
 function StatCard({
   icon: Icon,

@@ -5,12 +5,21 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { gsap } from 'gsap'
 import { Zap, User, Shield, Eye, EyeOff, ArrowLeft } from 'lucide-react'
+<<<<<<< HEAD
 import { useAuthContext } from '@/context/AuthContext'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import type { UserRole } from '@/types'
 
 const ThreeBackground = lazy(() => import('@/components/three/ThreeBackground'))
+=======
+import { useAuthContext } from '../context/AuthContext'
+import { Button } from '../components/ui/Button'
+import { Input } from '../components/ui/Input'
+import type { UserRole } from '../types'
+
+const ThreeBackground = lazy(() => import('../components/three/ThreeBackground'))
+>>>>>>> 918101e2642bbe8acb58086013a31c2b3259ffcb
 
 const loginSchema = z.object({
   email: z.string().email('Enter a valid email'),

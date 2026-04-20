@@ -1,5 +1,9 @@
 import { create } from 'zustand'
+<<<<<<< HEAD
 import type { Task, FluxUser } from '@/types'
+=======
+import type { Task, FluxUser } from '../types'
+>>>>>>> 918101e2642bbe8acb58086013a31c2b3259ffcb
 
 interface TaskStore {
   tasks: Task[]
